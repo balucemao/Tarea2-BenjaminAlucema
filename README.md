@@ -30,18 +30,21 @@ gcc tarea2.c tdas/*.c -Wno-unused-result -o StreamFinder
 ./StreamFinder
 ```
 
-# Funcionalidad principales:
+# Funcionalidad principales (1-8 estricto):
 
-- cargarPeliculas: Este es el paso mas importante en mi programa, se encarga de leer un csv y poblar simultaneamente cuatro mapas distintos: por id, genero, director y decada. Esta "Multi indexación" garantiza las busquedas casi instantaneas.
-- buscarPorId: Permite identificar una pelicula especifica en el mapa de IDs, utilizando su id asociado. Es muy eficiente gracias a utilizar mapas.
-- buscarPorGenero: Despliega todos los titulos asociados a un genero especifico (drama, fantasy, etc). Si la pelicula tiene varios generos, aparecera en la busqueda de cada uno.
-- buscarPorDirector: Lista todas las obras de un director especifico, incluso si la pelicula fue dirigida por más de una persona (separados por "," en csv).
-- buscarPorDecada: Agrupa las peliculas por periodos de 10 años. Se utiliza un comparados de enteros en este mapa. Por ejemplo el usuario ingresa 1994, el programa lo convierte a la decada de 1990-1999.
-- busquedaAvanzada: Cruza las peliculas por 2 criterios (género y década), para así obtener resultados más específicos, optimizando la busqueda para solo buscar en una sublista del género solicitado.
-- watchList: Permite al usuario gestionar (agregar, eliminar y mostrar peliculas) una lista de favoritos personal. Incluye la característica de evitar duplicados, y validar si existe el id de la pelicula buscada en el mapa de IDs.
-- liberarTodo: Función importante para la estabilidad y seguridad del proyecto. Realiza un limpiado de todos los mapas, listas, liberando toda la memoria dinamica para prevenir memory leaks.
-- is_equal_str: Funcion personalizada que compara cadenas de texto ignorando mayusculas o minusculas. Permite que por ejemplo Drama = drama = DRAMA.
+- cargarPeliculas (1): Este es el paso mas importante en mi programa, se encarga de leer un csv y poblar simultaneamente cuatro mapas distintos: por id, genero, director y decada. Esta "Multi indexación" garantiza las busquedas casi instantaneas.
+- buscarPorId (2): Permite identificar una pelicula especifica en el mapa de IDs, utilizando su id asociado. Es muy eficiente gracias a utilizar mapas.
+- buscarPorGenero (3): Despliega todos los titulos asociados a un genero especifico (drama, fantasy, etc). Si la pelicula tiene varios generos, aparecera en la busqueda de cada uno.
+- buscarPorDirector (4): Lista todas las obras de un director especifico, incluso si la pelicula fue dirigida por más de una persona (separados por "," en csv).
+- buscarPorDecada (5): Agrupa las peliculas por periodos de 10 años. Se utiliza un comparados de enteros en este mapa. Por ejemplo el usuario ingresa 1994, el programa lo convierte a la decada de 1990-1999.
+- busquedaAvanzada (6): Cruza las peliculas por 2 criterios (género y década), para así obtener resultados más específicos, optimizando la busqueda para solo buscar en una sublista del género solicitado.
+- watchList (7): Permite al usuario gestionar (agregar (1), eliminar (2) y mostrar (3) peliculas) una lista de favoritos personal. Incluye la característica de evitar duplicados, y validar si existe el id de la pelicula buscada en el mapa de IDs.
+- salir (8): Función que permite ejecutar limpiarTodo, limpia todos los mapas, listas, liberando toda la memoria dinamica para prevenir memory leaks. Finalmente termina la ejecucion del programa. 
 ==================================================================================================
+
+## Funcionalidad Extra
+
+- is_equal_str: Funcion personalizada que compara cadenas de texto ignorando mayusculas o minusculas. Permite que por ejemplo Drama = drama = DRAMA.
 - Detección de espacios: Al indexar directores o generos, el codigo limpia automaticamente los espacios despues de una coma (separacion de generos por ejemplo) drama, fantasy.
 
 
