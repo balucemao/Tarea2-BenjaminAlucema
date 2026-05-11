@@ -13,8 +13,8 @@
 
 # Estructuras y caracteristicas necesarias para ejecutar el programa
 
-- TDAs requeridos: list.c, map.c, extra.c
-- Cabeceras: list.h, map.h, extra.h
+- TDAs requeridos: list.c, map.c, extra.c (OBLIGATORIOS)
+- Cabeceras: list.h, map.h, extra.h (OBLIGATORIOS)
 
 # Instrucciones de compilación:
 
