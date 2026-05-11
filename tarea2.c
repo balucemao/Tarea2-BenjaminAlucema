@@ -33,7 +33,7 @@ void mostrarMenuPrincipal() {
   puts("3) Buscar por genero");
   puts("4) Buscar por director");
   puts("5) Buscar por decada");
-  puts("6) Buscar avanzada (genero y decada)");
+  puts("6) Busqueda avanzada (genero y decada)");
   puts("7) Gestionar una WatchList (personas)");
   puts("8) Salir");
 }
