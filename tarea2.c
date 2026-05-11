@@ -257,7 +257,7 @@ void buscarPorId(Map *pelis_porId) {
 //-- Si no existe muestra que no se encontraron peliculas del genero solicitado
 void buscarPorGenero(Map *pelis_porGenero){
   char generoActual[100];
-  printf("Ingrese el genero que se quiere buscar (drama, romance, accion, etc) :\n");
+  printf("Ingrese el genero que se quiere buscar (drama, romance, fantasy, etc) :\n");
   scanf(" %99[^\n]", generoActual);
 
   // Aqui busco el pair del genero buscado en el mapa (osea clave : genero y valor : lista de peliculas del genero) y lo copio
