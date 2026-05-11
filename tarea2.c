@@ -80,7 +80,7 @@ int is_equal_int(void *key1, void *key2) {
 // Funcion para mostrar todos los datos de una pelicula
 void mostrarPelicula(Film *pelicula){
   // Aqui se muestra el id, anio de lanzamiento, rating segun IMDb y titulo de la pelicula
-  printf("ID : %s | ANIO : %d | RATING : %.1f | TITULO : %s\n", pelicula->id, pelicula->year, pelicula->rating, pelicula->title);
+  printf("ID : %s | AÑO : %d | RATING : %.1f | TITULO : %s\n", pelicula->id, pelicula->year, pelicula->rating, pelicula->title);
   // Aqui se muestra en pantalla el director de la pelicula
   printf("Director : %s\n\n", pelicula->director);
   // Aqui se muestran todos los generos de la pelicula
@@ -293,11 +293,16 @@ void buscarPorDirector(Map *pelis_porDirector){
   else printf("No se encontraron peliculas para el director %s\n", directorActual);
 }
 
-// Implementacion de la funcion para filtrar peliculas por decada
+// =============== Implementacion: Busqueda Por Director ===============
+//Esta funcion recibe el mapa de peliculas por decada
+//Despues se le pide un año al usuario, y con la operacion matematica (año/10)*10 se transforma a decada
+//Finalmente busca si existe peliculas de esa decada
+//-- Si existen muestra toda la lista de peliculas en esa decada (sublista dentro del mapa)
+//-- Si no existen muestra que no hay peliculas ese año
 void buscarPorDecada(Map *pelis_porDecada){
   int anio, decada;
 
-  printf("ingrese el anio para filtrar por su decada : \n\n");
+  printf("Ingrese el año para filtrar por su decada : \n\n");
   scanf("%d", &anio);
   decada = (anio / 10)*10;
 
@@ -306,7 +311,7 @@ void buscarPorDecada(Map *pelis_porDecada){
     printf("Peliculas de la decada de %d :\n", decada);
     mostrarListaPeliculas((List*)pairActual->value);
   }
-  else printf("No se encontraron peliculas en la decada de %d\n", decada);
+  else printf("No se encontraron peliculas en la decada seleccionada\n", decada);
 }
 
 // =============== Implementacion: Busqueda Avanza (Genero y Decada) ===============
@@ -334,7 +339,7 @@ void busquedaAvanzada(Map *pelis_PorGenero){
   }
 
   // Si existian peliculas, se solicita al usuario el anio
-  printf("Ingrese un anio para filtrar por esa decada :\n");
+  printf("Ingrese un año para filtrar por esa decada :\n");
   scanf("%d", &anio);
   // Con el anio entregado se realiza la operacion matematica para transformarlo a decada
   decada = (anio / 10) * 10;
@@ -569,7 +574,7 @@ int main() {
   do {
     // Se muestra el menu principal 
     mostrarMenuPrincipal();
-    printf("Ingrese su opción: ");
+    printf("Ingrese su opcion (1-8): ");
     // Se requiere opcion (1-8) para continuar
     scanf(" %c", &opcion);
 
