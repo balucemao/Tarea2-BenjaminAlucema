@@ -40,7 +40,7 @@ gcc tarea2.c tdas/*.c -Wno-unused-result -o StreamFinder
 - busquedaAvanzada (6): Cruza las peliculas por 2 criterios (género y década), para así obtener resultados más específicos, optimizando la busqueda para solo buscar en una sublista del género solicitado.
 - watchList (7): Permite al usuario gestionar (agregar (1), eliminar (2) y mostrar (3) peliculas) una lista de favoritos personal. Incluye la característica de evitar duplicados, y validar si existe el id de la pelicula buscada en el mapa de IDs.
 - salir (8): Función que permite ejecutar limpiarTodo, limpia todos los mapas, listas, liberando toda la memoria dinamica para prevenir memory leaks. Finalmente termina la ejecucion del programa. 
-==================================================================================================
+===========================================================================================
 
 ## Funcionalidad Extra
 
